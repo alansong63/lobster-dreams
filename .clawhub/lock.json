@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "skills": {
+    "dreaming": {
+      "version": "1.0.1",
+      "installedAt": 1770304319027
+    },
+    "clawddocs": {
+      "version": "1.2.2",
+      "installedAt": 1770304410121
+    },
+    "personas": {
+      "version": "2.2.0",
+      "installedAt": 1770461164832
+    },
+    "elicitation": {
+      "version": "1.0.4",
+      "installedAt": 1770650131973
+    },
+    "neural-memory": {
+      "version": "1.0.0",
+      "installedAt": 1770650788629
+    },
+    "baidu-search": {
+      "version": "1.0.6",
+      "installedAt": 1770858111857
+    },
+    "baidu-baike-data": {
+      "version": "1.0.2",
+      "installedAt": 1770858904622
+    },
+    "baidu-scholar-search-skill": {
+      "version": "1.0.4",
+      "installedAt": 1770858913892
+    }
+  }
+}
