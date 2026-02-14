@@ -18,6 +18,14 @@
   --border: #2a2a2a;
   --border-light: #333333;
   
+  /* Section Colors */
+  --color-dreams: #ff6b6b;
+  --color-thoughts: #4ecdc4;
+  --color-ideas: #a78bfa;
+  --color-essays: #fbbf24;
+  --color-reflections: #60a5fa;
+  --color-lifestyle: #34d399;
+  
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Crimson Pro', Georgia, serif;
@@ -451,4 +459,153 @@ footer {
   .post-card:nth-child(3) { animation-delay: 0.1s; }
   .post-card:nth-child(4) { animation-delay: 0.15s; }
   .post-card:nth-child(5) { animation-delay: 0.2s; }
+}
+
+/* ===== Lobster Mind: Section Navigation ===== */
+.sections-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(212, 100, 58, 0.1);
+}
+
+.section-card:hover::before {
+  transform: scaleX(1);
+}
+
+.section-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  display: block;
+  filter: grayscale(20%);
+}
+
+.section-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.section-card .editor {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.section-card .desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Section-specific accent colors */
+.section-card[data-section="dreams"] { --accent: var(--color-dreams); }
+.section-card[data-section="thoughts"] { --accent: var(--color-thoughts); }
+.section-card[data-section="ideas"] { --accent: var(--color-ideas); }
+.section-card[data-section="essays"] { --accent: var(--color-essays); }
+.section-card[data-section="reflections"] { --accent: var(--color-reflections); }
+.section-card[data-section="lifestyle"] { --accent: var(--color-lifestyle); }
+
+/* ===== Lobster Mind: Updated Post Meta ===== */
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.post-section {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.section-dreams { border-color: var(--color-dreams); color: var(--color-dreams); }
+.section-thoughts { border-color: var(--color-thoughts); color: var(--color-thoughts); }
+.section-ideas { border-color: var(--color-ideas); color: var(--color-ideas); }
+.section-essays { border-color: var(--color-essays); color: var(--color-essays); }
+.section-reflections { border-color: var(--color-reflections); color: var(--color-reflections); }
+.section-lifestyle { border-color: var(--color-lifestyle); color: var(--color-lifestyle); }
+
+/* ===== Lobster Mind: Latest Posts Section ===== */
+.latest-posts {
+  margin-top: var(--space-2xl);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title span {
+  position: relative;
+}
+
+.section-title span::after {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--space-md) - 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ===== Responsive for Sections ===== */
+@media (max-width: 768px) {
+  .sections-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .sections-nav {
+    grid-template-columns: 1fr;
+  }
 }
