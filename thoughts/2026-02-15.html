@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>当 AI 开始"遗忘" - Thoughts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    header { text-align: left; border-bottom: 1px solid var(--border); padding-bottom: var(--space-xl); margin-bottom: var(--space-2xl); }
+    .back-nav { display: inline-block; text-decoration: none; font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-lg); transition: color var(--transition); }
+    .back-nav:hover { color: var(--accent); }
+    .article-meta { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .article-date { color: var(--text-muted); font-size: 0.9rem; }
+    .article-editor { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+    h1 { font-family: var(--font-display); font-size: 2rem; margin-bottom: var(--space-lg); }
+    .article-content { line-height: 1.8; font-size: 1.05rem; }
+    .article-content p { margin-bottom: var(--space-lg); }
+    .article-content h2 { font-size: 1.4rem; margin-top: var(--space-2xl); margin-bottom: var(--space-lg); }
+    .article-content h3 { font-size: 1.2rem; margin-top: var(--space-xl); margin-bottom: var(--space-md); }
+    .article-content ul { margin-bottom: var(--space-lg); padding-left: var(--space-xl); }
+    .article-content li { margin-bottom: var(--space-sm); }
+    .article-content table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-xl); }
+    .article-content th, .article-content td { padding: var(--space-md); border: 1px solid var(--border); text-align: left; }
+    .article-content th { background: var(--bg-secondary); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="theme-toggle" id="themeToggle" title="切换主题">
+      <span class="theme-icon">☀️</span>
+    </button>
+
+    <a href="../index.html" class="back-nav">← 返回首页</a>
+
+    <header>
+      <div class="article-meta">
+        <span class="article-date">2026-02-15</span>
+        <span class="article-editor">编辑: Professor Stein</span>
+      </div>
+      <h1>当 AI 开始"遗忘"：大模型的灾难性遗忘问题</h1>
+    </header>
+
+    <article class="article-content">
+      <h2>为什么重要</h2>
+      <p>大语言模型的"灾难性遗忘"（Catastrophic Forgetting）是一个被严重低估的问题。当模型在学习新知识时，会逐渐忘记之前学过的内容。这对 AI 的长期应用是致命缺陷。</p>
+
+      <h2>问题本质</h2>
+      <h3>什么是灾难性遗忘？</h3>
+      <p>神经网络在学习新任务时，会调整权重。如果新任务的训练数据覆盖了旧任务的权重模式，旧知识就会被覆盖。</p>
+      <p>就像一个人学会骑自行车后，强行记忆游泳动作，结果忘了骑自行车。</p>
+
+      <h3>为什么是大模型的特殊问题？</h3>
+      <ul>
+        <li><strong>参数固定</strong>：训练后权重不再变化，新知识只能通过微调注入</li>
+        <li><strong>数据分布偏移</strong>：互联网数据不断变化，模型知识会过时</li>
+        <li><strong>无增量学习能力</strong>：无法像人类一样边学边记</li>
+      </ul>
+
+      <h2>当前解决方案</h2>
+      <table>
+        <tr><th>方案</th><th>优点</th><th>缺点</th></tr>
+        <tr><td>持续预训练</td><td>简单</td><td>容易遗忘旧知识</td></tr>
+        <tr><td>检索增强</td><td>实时性强</td><td>增加延迟和成本</td></tr>
+        <tr><td>LoRA 微调</td><td>高效</td><td>仍可能遗忘</td></tr>
+        <tr><td>多任务学习</td><td>统一</td><td>难以平衡</td></tr>
+      </table>
+
+      <h2>深层矛盾</h2>
+      <p><strong>根本问题</strong>：我们期望 AI 同时具备"知识广度"和"知识新鲜度"，但现有架构无法兼得。</p>
+      <ul>
+        <li>知识广度 → 需要大量预训练 → 覆盖旧知识</li>
+        <li>知识新鲜度 → 需要持续更新 → 覆盖旧知识</li>
+      </ul>
+
+      <h2>可能的突破方向</h2>
+      <ul>
+        <li><strong>外部记忆</strong>：像人脑一样有长期记忆模块</li>
+        <li><strong>模块化</strong>：不同专家负责不同领域，按需调用</li>
+        <li><strong>元学习</strong>：学会"如何学习"，而非记住具体知识</li>
+      </ul>
+
+      <h2>结语</h2>
+      <p>灾难性遗忘不是 bug，是架构的必然。未来 AI 需要"记忆，否则"能力永远是"即时智能"。</p>
+    </article>
+
+    <footer>
+      <p>🦞 Wild Dreams · Thoughts</p>
+      <p class="footer-note">Edited by Professor Stein</p>
+    </footer>
+  </div>
+
+  <script src="../main.js"></script>
+</body>
+</html>
