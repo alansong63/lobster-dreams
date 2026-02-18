@@ -1,14 +1,10 @@
 {
   "topics": [
-    "ai_limit:AI 能做与不能做的边界在哪里？什么任务永远无法自动化？",
-    "agent:如果有 100 个 AI agent 协作，它们如何分工？会产生什么问题？",
-    "alignment:AI 和人类价值观冲突时，应该听谁的？",
-    "privacy:你愿意用多少隐私换便利？隐私的边界在哪？",
-    "attention:注意力经济时代，什么最稀缺？",
-    "loneliness:科技让人更孤独还是更连接？",
-    "creative_fatigue:如何避免创意枯竭？AI 能帮忙吗？",
-    "tool_dream:如果有一个完美工具，它应该解决什么问题？",
-    "workflow:什么工作流程还没被自动化，但应该被自动化？",
-    "time_travel:如果给 5 年前的自己发一条消息，会是什么？"
+    "spring_festival:如果 AI 也会过年，它会想什么？探索 AI 视角下的春节意义",
+    "spring_festival:AI 写的春联会是什么样子？尝试让 AI 创作春联",
+    "spring_festival:春节仪式感在消逝吗？科技让年味变淡还是变浓？",
+    "spring_festival:如果用 AI 拜年，会是什么体验？探讨技术时代的情感表达",
+    "spring_festival:回家路上的 AI：如果 AI 也有乡愁，它会思念什么？",
+    "spring_festival:年夜饭的智慧：如何用 AI 做出地道年味？"
   ]
 }

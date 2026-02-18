@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.12",
+    "lastTouchedAt": "2026-02-13T07:11:45.553Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-13T07:11:45.544Z",
+    "lastRunVersion": "2026.2.12",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "zai:default": {
+        "provider": "zai",
+        "mode": "api_key"
+      },
+      "google:default": {
+        "provider": "google",
+        "mode": "api_key"
+      },
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "[MINIMAX-OAUTH]",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax M2.1",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "fallbacks": [
+          "zai/glm-4.7",
+          "google/gemini-3-pro-preview",
+          "minimax-portal/MiniMax-M2.1-lightning",
+          "minimax-portal/MiniMax-M2.1"
+        ],
+        "primary": "minimax-portal/MiniMax-M2.5"
+      },
+      "models": {
+        "zai/glm-4.7": { "alias": "GLM" },
+        "google/gemini-3-pro-preview": { "alias": "gemini" },
+        "minimax-portal/MiniMax-M2.1-lightning": { "alias": "minimax-m2.1-lightning" },
+        "minimax-portal/MiniMax-M2.5": { "alias": "minimax-m2.5" },
+        "minimax-portal/MiniMax-M2.1": { "alias": "minimax-m2.1" }
+      },
+      "workspace": "/home/ubuntu/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true,
+        "sources": ["memory", "sessions"],
+        "experimental": { "sessionMemory": true }
+      },
+      "compaction": { "mode": "safeguard" },
+      "thinkingDefault": "medium",
+      "maxConcurrent": 4,
+      "subagents": { "maxConcurrent": 8 }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "apiKey": "[BRAVE-API-KEY]"
+      },
+      "fetch": { "enabled": true }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions",
+    "tts": {
+      "auto": "tagged",
+      "provider": "edge",
+      "edge": {
+        "enabled": true,
+        "voice": "zh-CN-XiaoxiaoNeural",
+        "lang": "zh-CN",
+        "outputFormat": "audio-24khz-48kbitrate-mono-mp3"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": { "enabled": true },
+        "command-logger": { "enabled": true },
+        "boot-md": { "enabled": true }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "[TELEGRAM-BOT-TOKEN]",
+      "groups": {
+        "-4650028356": {
+          "requireMention": true,
+          "groupPolicy": "open"
+        }
+      },
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    },
+    "feishu": {
+      "appId": "[FEISHU-APP-ID]",
+      "appSecret": "[FEISHU-APP-SECRET]"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "[GATEWAY-TOKEN]"
+    },
+    "trustedProxies": [],
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": { "nodeManager": "npm" }
+  },
+  "plugins": {
+    "allow": [
+      "telegram",
+      "feishu",
+      "minimax-portal-auth",
+      "minimax-mcp"
+    ],
+    "entries": {
+      "telegram": { "enabled": true },
+      "feishu": { "enabled": true },
+      "minimax-portal-auth": { "enabled": true },
+      "minimax-mcp": { "enabled": true }
+    }
+  }
+}

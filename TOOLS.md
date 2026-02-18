@@ -2,7 +2,10 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
-## What Goes Here
+## 飞书 TODO Bitable
+- app_token: VrbBb2fv0a9eR1sSgWpcwA4vnqi
+- table_id: tblGiOgSxhO5Wtir
+- 地址: https://my.feishu.cn/base/VrbBb2fv0a9eR1sSgWpcwA4vnqi
 
 Things like:
 

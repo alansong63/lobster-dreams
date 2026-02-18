@@ -1,0 +1,24 @@
+{
+  "lastDreamDate": "2026-02-17",
+  "lastSectionGenerated": "thoughts",
+  "sectionOrder": ["thoughts", "ideas", "essays", "reflections", "lifestyle"],
+  "sectionsDoneThisWeek": ["dreams", "thoughts", "ideas", "essays", "reflections", "lifestyle"],
+  "lastWeeklyReport": "",
+  "weeklySectionsDone": ["dreams", "thoughts", "ideas", "essays", "reflections", "lifestyle"],
+  "performanceScores": {
+    "dreams": [],
+    "thoughts": [],
+    "ideas": [],
+    "essays": [],
+    "reflections": [],
+    "lifestyle": []
+  },
+  "articlesPerSection": {
+    "dreams": 9,
+    "thoughts": 4,
+    "ideas": 3,
+    "essays": 3,
+    "reflections": 3,
+    "lifestyle": 3
+  }
+}

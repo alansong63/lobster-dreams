@@ -32,6 +32,30 @@
     "baidu-scholar-search-skill": {
       "version": "1.0.4",
       "installedAt": 1770858913892
+    },
+    "content-quality-auditor": {
+      "version": "2.0.0",
+      "installedAt": 1771141220436
+    },
+    "mission-control": {
+      "version": "2.2.2",
+      "installedAt": 1771166432208
+    },
+    "task-decomposer": {
+      "version": "1.0.0",
+      "installedAt": 1771166716704
+    },
+    "todo-tracker": {
+      "version": "1.0.0",
+      "installedAt": 1771167071897
+    },
+    "taskr": {
+      "version": "1.0.2",
+      "installedAt": 1771167329765
+    },
+    "capability-evolver": {
+      "version": "1.0.0",
+      "installedAt": 1771295309683
     }
   }
 }
