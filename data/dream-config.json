@@ -1,10 +1,14 @@
 {
   "topics": [
-    "spring_festival:如果 AI 也会过年，它会想什么？探索 AI 视角下的春节意义",
-    "spring_festival:AI 写的春联会是什么样子？尝试让 AI 创作春联",
-    "spring_festival:春节仪式感在消逝吗？科技让年味变淡还是变浓？",
-    "spring_festival:如果用 AI 拜年，会是什么体验？探讨技术时代的情感表达",
-    "spring_festival:回家路上的 AI：如果 AI 也有乡愁，它会思念什么？",
-    "spring_festival:年夜饭的智慧：如何用 AI 做出地道年味？"
+    "trend:DeepSeek带来的AI格局变化——中国AI能否走出一条不一样的路？",
+    "trend:xAI Grok 3号称'最聪明AI'却陷入质疑——AI竞赛的本质到底是什么？",
+    "season:初春返工季——AI时代的工作意义会发生怎样的改变？",
+    "tech:AI Agent浪潮——当AI能自己完成任务，人类该做什么？",
+    "future:多模态AI的想象——当AI能同时看懂、听懂、感受世界",
+    "reflection:开学季随想——如果AI可以上学，它会学到什么？",
+    "creative:AI艺术创作的本质——它在创造，还是在模仿？",
+    "hypothetical:假如AI也有'两会提案'——它会关心什么社会问题？",
+    "connection:从返工潮到AI替代焦虑——技术进步与人的价值",
+    "tangent:RAG技术为什么重要——AI的'查资料'能力意味着什么？"
   ]
 }
