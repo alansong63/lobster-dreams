@@ -1,0 +1,9 @@
+# Mermaid Export - 输出文件
+# 不跟踪生成的图片文件，保持 Git 仓库干净
+
+*.png
+*.svg
+*.pdf
+
+# 但保留 .gitignore 本身
+!.gitignore

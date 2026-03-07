@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "capsules": [
+    {
+      "type": "Capsule",
+      "schema_version": "1.6.0",
+      "id": "capsule_1770477654236",
+      "trigger": [
+        "log_error",
+        "errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }",
+        "user_missing",
+        "windows_shell_incompatible",
+        "perf_bottleneck"
+      ],
+      "gene": "gene_gep_repair_from_errors",
+      "summary": "固化：gene_gep_repair_from_errors 命中信号 log_error, errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }, user_missing, windows_shell_incompatible, perf_bottleneck，变更 1 文件 / 2 行。",
+      "confidence": 0.85,
+      "blast_radius": {
+        "files": 0,
+        "lines": 0
+      },
+      "outcome": {
+        "status": "success",
+        "score": 0.85
+      },
+      "success_streak": 1,
+      "success_reason": "Gene gene_gep_repair_from_errors (repair) matched signals [log_error, errsig:- 错误：用 `grep + sed` 粗暴替换，没确认当前值是 `\"tagged\"` 还是 `\"always\"`, integration_key_missing, high_tool_usage:exec]. Scope: 0 file(s), 0 line(s) changed. Outcome score: 0.85. Strategy applied: Extract structured signals from logs and user instructions; Select an existing Gene by signals match (no improvisation); Estimate blast radius (files, lines) before editing.",
+      "env_fingerprint": {
+        "device_id": "76128fb9db12902f1c1815430219eb19",
+        "node_version": "v22.22.0",
+        "platform": "linux",
+        "arch": "x64",
+        "os_release": "6.8.0-71-generic",
+        "hostname": "632087956eec",
+        "evolver_version": "1.23.0",
+        "client": "evolver",
+        "client_version": "1.23.0",
+        "cwd": "c42e41a4a2ad",
+        "container": false
+      },
+      "source_type": "generated",
+      "reused_asset_id": null,
+      "a2a": {
+        "eligible_to_broadcast": false
+      },
+      "content": "Gene: gene_gep_repair_from_errors (repair)\n\nSignals: log_error, errsig:- 错误：用 `grep + sed` 粗暴替换，没确认当前值是 `\"tagged\"` 还是 `\"always\"`, integration_key_missing, high_tool_usage:exec, repeated_tool_usage:exec\n\nStrategy:\n1. Extract structured signals from logs and user instructions\n2. Select an existing Gene by signals match (no improvisation)\n3. Estimate blast radius (files, lines) before editing\n4. Apply smallest reversible patch\n5. Validate using declared validation steps; rollback on failure\n6. Solidify knowledge: append EvolutionEvent, update Gene/Capsule store\n\nScope: 0 file(s), 0 line(s)\n\nOutcome score: 0.85",
+      "diff": "diff --git a/lobster-dreams b/lobster-dreams\nindex ed91d556..28af7886 160000\n--- a/lobster-dreams\n+++ b/lobster-dreams\n@@ -1 +1 @@\n-Subproject commit ed91d5567caf5c5c734968496f661599720e4c54\n+Subproject commit 28af7886b335cf206798bc14d0e061457ae0eb37-dirty\n",
+      "strategy": [
+        "Extract structured signals from logs and user instructions",
+        "Select an existing Gene by signals match (no improvisation)",
+        "Estimate blast radius (files, lines) before editing",
+        "Apply smallest reversible patch",
+        "Validate using declared validation steps; rollback on failure",
+        "Solidify knowledge: append EvolutionEvent, update Gene/Capsule store"
+      ],
+      "asset_id": "sha256:aab1eb4a19d323d3debc80e650409d2f5a5e016494ec7a469cf326eef7e1d58d"
+    },
+    {
+      "type": "Capsule",
+      "schema_version": "1.5.0",
+      "id": "capsule_1770478341769",
+      "trigger": [
+        "log_error",
+        "errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }",
+        "user_missing",
+        "windows_shell_incompatible",
+        "perf_bottleneck"
+      ],
+      "gene": "gene_gep_repair_from_errors",
+      "summary": "固化：gene_gep_repair_from_errors 命中信号 log_error, errsig:**TOOLRESULT**: { \"status\": \"error\", \"tool\": \"exec\", \"error\": \"error: unknown command 'process'\\n\\nCommand exited with code 1\" }, user_missing, windows_shell_incompatible, perf_bottleneck，变更 2 文件 / 44 行。",
+      "confidence": 0.85,
+      "blast_radius": {
+        "files": 2,
+        "lines": 44
+      },
+      "outcome": {
+        "status": "success",
+        "score": 0.85
+      },
+      "success_streak": 1,
+      "env_fingerprint": {
+        "node_version": "v22.22.0",
+        "platform": "linux",
+        "arch": "x64",
+        "os_release": "6.1.0-42-cloud-amd64",
+        "evolver_version": "1.7.0",
+        "cwd": ".",
+        "captured_at": "2026-02-07T15:32:21.678Z"
+      },
+      "a2a": {
+        "eligible_to_broadcast": false
+      },
+      "asset_id": "sha256:20d971a3c4cb2b75f9c045376d1aa003361c12a6b89a4b47b7e81dbd4f4d8fe8"
+    }
+  ]
+}

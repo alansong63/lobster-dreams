@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "baidu-mcp": {
+      "command": "/home/ubuntu/.openclaw/workspace/skills/baidu-mcp/.venv/bin/baidu-mcp",
+      "args": [],
+      "env": {}
+    },
+    "tavily-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-tavily"],
+      "env": {
+        "TAVILY_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2JzdGVyX2JybyIsImlhdCI6MTc0MjY3MTIwMH0.Z8VPEBajLk2M0YWQ3M1j1N7gGJ9Q0Z8VPEBajLk2M0"
+      }
+    }
+  },
+  "imports": []
+}

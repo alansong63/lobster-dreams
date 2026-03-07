@@ -1,0 +1,80 @@
+flowchart TB
+    subgraph UserLayer["👤 用户层 - 消息渠道"]
+        WA[WhatsApp]
+        TG[Telegram]
+        DS[Discord]
+        SL[Slack]
+        SG[Signal]
+        iMsg[iMessage]
+        Web[WebChat]
+    end
+
+    subgraph ControlLayer["🎮 控制层 - 控制接口"]
+        CLI[CLI 命令行]
+        MacApp[macOS App]
+        WebUI[Web Admin UI]
+        Mobile[Mobile App]
+    end
+
+    subgraph Gateway["🚪 Gateway 网关 (控制平面)"]
+        WS[WebSocket 服务器 端口 18789]
+        ChannelAdapters[渠道适配器 Channel Adapters]
+        Auth[认证与配对 Authentication]
+        Events[事件系统 agent/chat/presence/health]
+    end
+
+    subgraph Runtime["⚙️ Agent Runtime 运行时"]
+        SessionMgr[会话管理器 Session Manager]
+        ContextAsm[上下文组装 Context Assembly]
+        ModelInvoker[模型调用 Model Invocation]
+        ToolExec[工具执行 Tool Execution]
+        Memory[记忆系统 Memory Search]
+    end
+
+    subgraph Tools["🛠️ 工具层"]
+        Bash[Bash 命令]
+        Browser[浏览器控制]
+        Files[文件操作]
+        Canvas[Canvas UI]
+        Cron[定时任务]
+        Subagents[子代理]
+        Plugins[插件工具]
+    end
+
+    subgraph Storage["💾 存储层"]
+        Sessions[会话历史 JSONL]
+        Config[配置文件 openclaw.json]
+        MemoryFiles[记忆文件 memory/*.md]
+        VectorDB[向量索引 Vector Index]
+        Creds[凭证存储 Credentials]
+    end
+
+    subgraph Models["🤖 AI 模型提供商"]
+        Anthropic[Anthropic Claude]
+        OpenAI[OpenAI GPT]
+        GLM[智谱 GLM]
+        MiniMax[MiniMax]
+        Local[本地模型]
+    end
+
+    WA & TG & DS & SL & SG & iMsg & Web -->|WebSocket/消息 | WS
+    CLI & MacApp & WebUI & Mobile -->|WebSocket API| WS
+    WS --> ChannelAdapters --> Auth --> Events
+    Events -->|路由消息 | SessionMgr
+    SessionMgr --> ContextAsm --> ModelInvoker --> ToolExec
+    SessionMgr <-->|读取历史 | Sessions
+    ContextAsm <-->|检索记忆 | Memory
+    Memory <--> MemoryFiles & VectorDB
+    ToolExec --> Bash & Browser & Files & Canvas & Cron & Subagents & Plugins
+    ModelInvoker <-->|API 调用 | Anthropic & OpenAI & GLM & MiniMax & Local
+    Config -.->|配置 | Gateway & Runtime
+    Creds -.->|凭证 | Auth
+    Creds -.->|API Keys| Models
+
+    style UserLayer fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
+    style ControlLayer fill:#fff4e1,stroke:#cc6600,stroke-width:2px
+    style Gateway fill:#ffe1e1,stroke:#cc0000,stroke-width:2px
+    style Runtime fill:#e1ffe1,stroke:#00cc00,stroke-width:2px
+    style Tools fill:#f0e1ff,stroke:#6600cc,stroke-width:2px
+    style Storage fill:#fff9e1,stroke:#cc9900,stroke-width:2px
+    style Models fill:#e1f0ff,stroke:#0066cc,stroke-width:2px
