@@ -1,0 +1,8 @@
+{
+  "name": "task-checklist",
+  "version": "0.4.0",
+  "description": "长程任务 checklist 管理框架。帮助 AI agent 在执行长程任务时保持进度追踪，确保任务不会因上下文中断而丢失进度。支持动态创建、更新、完成 checklist。支持本地 MD 存档和自动进度跟踪。",
+  "author": "Lobster_Bro",
+  "created": "2026-03-07",
+  "updated": "2026-03-09"
+}
